@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-green-900">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,16 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <nav>
-        <button class="h-screen" type="button" onclick="onScrollButtonClick('about')">hello</button>
-    </nav>
+    <div class="flex justify-center w-screen h-auto mt-[2vh]">
+        <nav class="bg-amber-400 fixed w-fit px-4 py-2 rounded-xl">
+            <button class="m-[3px]" type="button" onclick="onScrollButtonClick('about')">hello</button>
+            <button class="m-[3px]" type="button" onclick="onScrollButtonClick('about')">hello</button>
+            <button class="m-[3px]" type="button" onclick="onScrollButtonClick('about')">hello</button>
+        </nav>
+    </div>
 
-    <h1 class="h-screen" id="about">hello</h1>
+    <main class="pt-13">
+        <h1 class="" id="about">hello</h1>
+    </main>
 </body>
 </html>
