@@ -4,7 +4,8 @@ import "./globals.css";
 
 const googleSans = Google_Sans({
   weight: "600",
-  subsets: ["latin"],
+  subsets: ["latin"], 
+  fallback: ['system-ui', 'arial']
 });
 
 export const metadata: Metadata = {

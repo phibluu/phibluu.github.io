@@ -1,9 +1,11 @@
-import Image from "next/image";
-import Script from "next/script";
-import NavBar from "./components/navBar";
+import Title from "./components/title"
+import Background from "./components/background"
 
 export default function Home() {
   return (
-    <NavBar></NavBar>
+    <div>
+      <Background></Background>
+      <Title></Title>
+    </div>
   );
 }

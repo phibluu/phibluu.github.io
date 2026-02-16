@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: radial-gradient(ellipse 10% 60% at 50% 0%, rgba(99, 102, 241, 0.25), transparent 70%), #000000;
   --foreground: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --buttons: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: radial-gradient(125% 125% at 50% 10%, #0d1a36 40%, #000000 100%);
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
+  min-height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scrollbar-base-color: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
