@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
+const now = new Date();
+
 export default function Background(props) {
 
     const canvasRef = useRef(null);
@@ -32,13 +34,13 @@ export default function Background(props) {
                 x: Math.floor(Math.random() * width),
                 y: Math.floor(Math.random() * height),
                 size: 1,
-                speed: (Math.random() / 2) + 0.2
+                speed: ((Math.random() / 2) + 0.2) * (now.getSeconds() / 50),
             });
         }
 
         let animationID;
 
-        function draw() {
+        function drawStars() {
             context.clearRect(0, 0, width, height);
 
             stars.forEach(star => {
@@ -48,16 +50,25 @@ export default function Background(props) {
                     star.y = 0;
                 }
 
+                if(star.x > width) {
+                    star.x = 0;
+                }
+
                 context.beginPath();
                 context.arc(star.x, star.y, star.size, 0, Math.PI * 2);
                 context.fillStyle = "white";
                 context.fill();
             });
 
-            animationID = requestAnimationFrame(draw);
+            animationID = requestAnimationFrame(drawStars);
+        }
+        
+        function drawMoon() {
+            // draw a moon
         }
 
-        draw();
+        drawStars();
+        drawMoon();
 
         return () => {
             cancelAnimationFrame(animationID);
